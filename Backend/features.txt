@@ -1,0 +1,5 @@
+1. QNA - JSON File/NLP
+2. Data Analysis - Regression Models
+3. Current Prices - Firebase/Web Scrapping
+
+
