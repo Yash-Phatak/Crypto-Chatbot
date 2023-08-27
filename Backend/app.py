@@ -10,7 +10,7 @@ import random
 import io
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+CORS(app, resources={r"/*": {"origins": "https://crypton-chatbot.vercel.app/chat"}})
 
 @app.get("/")
 def index_get():
