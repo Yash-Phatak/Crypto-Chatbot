@@ -14,7 +14,7 @@ CORS(app, resources={r"/*": {"origins": "https://crypton-chatbot.vercel.app/chat
 
 @app.get("/")
 def index_get():
-    return {"message": "Hello from backend"}
+    return "Hello"
 
 @app.post("/chat")
 def chat():
