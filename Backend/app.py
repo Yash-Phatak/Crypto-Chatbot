@@ -22,9 +22,9 @@ def index_get():
     return "Hello"
 
 @app.post("/faq")
-def chat():
+def faq():
     text = request.get_json().get("message")
-    print(type(text))
+    # print(type(text))
     response = chatbot_response(text)
     message = {"answer":response}
     # return jsonify(message)
