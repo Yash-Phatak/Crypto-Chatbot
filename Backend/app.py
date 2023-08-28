@@ -21,7 +21,7 @@ CORS(app, resources={r'/*': api_v2_cors_config})
 def index_get():    
     return "Hello"
 
-@app.post("/chat")
+@app.post("/faq")
 def chat():
     text = request.get_json().get("message")
     print(type(text))
