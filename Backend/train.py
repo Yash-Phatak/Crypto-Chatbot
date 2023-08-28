@@ -36,8 +36,8 @@ words = [lemmatizer.lemmatize(w.lower(),pos='v') for w in words if w not in igno
 words = sorted(list(set(words)))
 
 classes = sorted(list(set(classes)))
-pickle.dump(words,open('Krypto\Backend\words.pkl',mode='wb'))
-pickle.dump(classes,open('Krypto\Backend\classes.pkl',mode='wb'))
+pickle.dump(words,open('words.pkl',mode='wb'))
+pickle.dump(classes,open('classes.pkl',mode='wb'))
 
 #building the dl model
 training =[]
@@ -71,5 +71,5 @@ sgd = SGD(learning_rate=0.01,weight_decay=1e-6,momentum=0.9,nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 #fitting and saving the model
 hist = model.fit(np.array(train_x),np.array(train_y),epochs=200,batch_size=5,verbose=1)
-model.save('Krypto\Backend\krypto_model.h5', hist)
+model.save('krypto_model.h5', hist)
 print("Model Created.GG!")
