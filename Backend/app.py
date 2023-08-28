@@ -21,13 +21,21 @@ CORS(app, resources={r'/*': api_v2_cors_config})
 def index_get():    
     return "Hello"
 
+# @app.post("/faq")
+# def faq():
+#     text = request.get_json().get("message")
+#     # print(type(text))
+#     answer = chatbot_response(text)
+#     # message = {"answer":response}
+#     return jsonify(answer)
+
 @app.post("/faq")
 def faq():
     text = request.get_json().get("message")
-    # print(type(text))
     answer = chatbot_response(text)
-    # message = {"answer":response}
+    answer.headers.add('Access-Control-Allow-Origin', '*')
     return jsonify(answer)
+
 
 @app.post("/plot")
 def plot():
