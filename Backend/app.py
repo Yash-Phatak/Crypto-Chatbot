@@ -28,7 +28,7 @@ def chat():
     response = chatbot_response(text)
     message = {"answer":response}
     # return jsonify(message)
-    return jsonify("answer":"Hello, Mit")
+    return jsonify({"answer":"Hello, Mit"})
 
 @app.post("/plot")
 def plot():
