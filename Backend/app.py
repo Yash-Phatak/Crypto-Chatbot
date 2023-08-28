@@ -10,10 +10,15 @@ import random
 import io
 
 app = Flask(__name__)
-CORS(app, resources={r'/*': {'origins': '*'}})
+api_v2_cors_config = {
+  "origins": ["*"],
+  "methods": ["OPTIONS", "GET", "POST"],
+  "allow_headers": ["Authorization", "Content-Type"]
+}
+CORS(app, resources={r'/*': api_v2_cors_config})
 
 @app.get("/")
-def index_get():
+def index_get():    
     return "Hello"
 
 @app.post("/chat")
