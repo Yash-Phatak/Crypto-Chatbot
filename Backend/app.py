@@ -10,7 +10,7 @@ import random
 import io
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://crypton-chatbot.vercel.app/chat"}})
+CORS(app, resources={r"/*": {"origins": "https://crypton-chatbot.vercel.app"}})
 
 @app.get("/")
 def index_get():
@@ -41,13 +41,6 @@ def plot():
             buffer.seek(0)
     plot.close()
     return send_file(buffer, mimetype='image/png')
-
-# @app.post("/compare")
-# def compare():
-#     text = request.get_json().get("message")
-#     text1 = text.split()[0]
-#     text2 = text.split()[1]
-#     return {"message": [text1,text2]}
 
 @app.post("/comparison")
 def comparison():
