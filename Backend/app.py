@@ -25,9 +25,9 @@ def index_get():
 def faq():
     text = request.get_json().get("message")
     # print(type(text))
-    response = chatbot_response(text)
-    message = {"answer":response}
-    return jsonify(message)
+    answer = chatbot_response(text)
+    # message = {"answer":response}
+    return jsonify(answer)
 
 @app.post("/plot")
 def plot():
