@@ -68,4 +68,4 @@ def chatbot_response(msg):
     res = getResponse(ints, intents)
     return res #string returned
 
-# chatbot_response("Crypto?")
+chatbot_response("What is Crypto?")
