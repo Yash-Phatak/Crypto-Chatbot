@@ -64,9 +64,11 @@ def getResponse(ints, intents_json): #takes output of predict class as ints
     return result
 
 def chatbot_response(msg):
+    print(1)
     ints = predict_class(msg, model)
     response = getResponse(ints, intents)
     print(response)
     output = {"answer":response}
+    print(2)
     # return res #string returned
     return output
