@@ -72,3 +72,5 @@ def chatbot_response(msg):
     print(2)
     # return res #string returned
     return output
+
+print(chatbot_response("Hello"))
