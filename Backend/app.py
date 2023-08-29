@@ -7,7 +7,7 @@ from analysis import cryptocurrencies
 from analysis import compareit
 import difflib
 import random
-import io
+import io   
 
 app = Flask(__name__)
 api_v2_cors_config = {
@@ -83,10 +83,10 @@ def realtime():
 
 @app.post("/faq")
 def faq():
-    text = request.get_json().get("message")
-    answer = chatbot_response(text)
-    answer.headers.add('Access-Control-Allow-Origin', '*')
-    return jsonify({"answer":"h"})
+    # text = request.get_json().get("message")
+    # answer = chatbot_response(text)
+    # answer.headers.add('Access-Control-Allow-Origin', '*')
+    return jsonify({"answer":"Ha chal raha hai ab!"})
 
 if __name__ == "__main__":
     app.run(debug=True)
