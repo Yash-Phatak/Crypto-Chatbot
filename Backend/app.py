@@ -32,7 +32,9 @@ def index_get():
 @app.post("/faq")
 def faq():
     text = request.get_json().get("message")
+    print(1)
     answer = chatbot_response(text)
+    print(2)
     answer.headers.add('Access-Control-Allow-Origin', '*')
     return jsonify(answer)
 
