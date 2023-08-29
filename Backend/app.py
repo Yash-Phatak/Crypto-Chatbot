@@ -73,13 +73,20 @@ def realtime():
     answer = get_realtime(text)
     return jsonify(answer)
 
-@app.after_request
-def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', 'https://crypton-chatbot.vercel.app')
-  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-  response.headers.add('Access-Control-Allow-Credentials', 'true')
-  return response
+# @app.after_request
+# def after_request(response):
+#   response.headers.add('Access-Control-Allow-Origin', 'https://crypton-chatbot.vercel.app')
+#   response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+#   response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+#   response.headers.add('Access-Control-Allow-Credentials', 'true')
+#   return response
+
+@app.post("/faq")
+def faq():
+    text = request.get_json().get("message")
+    answer = chatbot_response(text)
+    answer.headers.add('Access-Control-Allow-Origin', '*')
+    return jsonify({"answer":"h"})
 
 if __name__ == "__main__":
     app.run(debug=True)
