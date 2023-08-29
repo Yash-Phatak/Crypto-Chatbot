@@ -29,12 +29,12 @@ def index_get():
 #     # message = {"answer":response}
 #     return jsonify(answer)
 
-@app.post("/faq")
-def faq():
-    text = request.get_json().get("message")
-    answer = chatbot_response(text)
-    answer.headers.add('Access-Control-Allow-Origin', '*')
-    return jsonify(answer)
+# @app.post("/faq")
+# def faq():
+#     text = request.get_json().get("message")
+#     answer = chatbot_response(text)
+#     answer.headers.add('Access-Control-Allow-Origin', '*')
+#     return jsonify(answer)
 
 
 @app.post("/plot")
