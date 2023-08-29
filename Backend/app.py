@@ -29,12 +29,12 @@ def index_get():
 #     # message = {"answer":response}
 #     return jsonify(answer)
 
-# @app.post("/faq")
-# def faq():
-#     text = request.get_json().get("message")
-#     answer = chatbot_response(text)
-#     answer.headers.add('Access-Control-Allow-Origin', '*')
-#     return jsonify(answer)
+@app.post("/faq")
+def faq():
+    text = request.get_json().get("message")
+    answer = chatbot_response(text)
+    answer.headers.add('Access-Control-Allow-Origin', '*')
+    return jsonify(answer)
 
 
 @app.post("/plot")
@@ -81,12 +81,12 @@ def realtime():
 #   response.headers.add('Access-Control-Allow-Credentials', 'true')
 #   return response
 
-@app.post("/faq")
-def faq():
-    # text = request.get_json().get("message")
-    # answer = chatbot_response(text)
-    # answer.headers.add('Access-Control-Allow-Origin', '*')
-    return jsonify({"answer":"Ha chal raha hai ab!"})
+# @app.post("/faq")
+# def faq():
+#     # text = request.get_json().get("message")
+#     # answer = chatbot_response(text)
+#     # answer.headers.add('Access-Control-Allow-Origin', '*')
+#     return jsonify({"answer":"Ha chal raha hai ab!"})
 
 if __name__ == "__main__":
     app.run(debug=True)
