@@ -30,12 +30,12 @@ def index_get():
 #     return jsonify(answer)
 
 @app.post("/faq")
-def faq():
+async def faq():
     print("Reached faq")
     text = request.get_json().get("message")
     print("Got the message")
     print(text)
-    answer = chatbot_response(text)
+    answer = await chatbot_response(text)
     print("Got the answer")
     answer.headers.add('Access-Control-Allow-Origin', '*')
     return jsonify(answer)
