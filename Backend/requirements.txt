@@ -1,5 +1,5 @@
 beautifulsoup4==4.12.2
-Flask==2.3.2
+Flask==2.2.5
 Flask_Cors==4.0.0
 keras==2.13.1
 matplotlib==3.7.1
