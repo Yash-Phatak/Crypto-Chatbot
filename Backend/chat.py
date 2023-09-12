@@ -1,13 +1,13 @@
 from keras.models import load_model
-model = load_model('krypto_model.h5')
+model = load_model('Backend\krypto_model.h5')
 import json
 import random
 import pickle
 import numpy as np
-data = open('intents.json').read()
+data = open('Backend\intents.json').read()
 intents = json.loads(data)
-words = pickle.load(open('words.pkl','rb'))
-classes = pickle.load(open('classes.pkl','rb'))
+words = pickle.load(open('Backend\words.pkl','rb'))
+classes = pickle.load(open('Backend\classes.pkl','rb'))
 import nltk
 nltk.download('punkt')
 nltk.download('wordnet')

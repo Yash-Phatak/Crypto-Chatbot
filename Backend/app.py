@@ -22,24 +22,24 @@ CORS(app, resources={r'/*': api_v2_cors_config})
 def index_get():    
     return "Hello"
 
-# @app.post("/faq")
-# def faq():
-#     text = request.get_json().get("message")
-#     # print(type(text))
-#     answer = chatbot_response(text)
-#     # message = {"answer":response}
-#     return jsonify(answer)
-
 @app.post("/faq")
-async def faq():
-    print("Reached faq")
+def faq():
     text = request.get_json().get("message")
-    print("Got the message")
-    print(text)
-    answer = await chatbot_response(text)
-    print("Got the answer")
-    answer.headers.add('Access-Control-Allow-Origin', '*')
+    # print(type(text))
+    answer = chatbot_response(text)
+    # message = {"answer":response}
     return jsonify(answer)
+
+# @app.post("/faq")
+# async def faq():
+#     print("Reached faq")
+#     text = request.get_json().get("message")
+#     print("Got the message")
+#     print(text)
+#     answer = await chatbot_response(text)
+#     print("Got the answer")
+#     answer.headers.add('Access-Control-Allow-Origin', '*')
+#     return jsonify(answer)
 
 
 @app.post("/plot")
@@ -77,21 +77,6 @@ def realtime():
     text = request.get_json().get("message")
     answer = get_realtime(text)
     return jsonify(answer)
-
-# @app.after_request
-# def after_request(response):
-#   response.headers.add('Access-Control-Allow-Origin', 'https://crypton-chatbot.vercel.app')
-#   response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-#   response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-#   response.headers.add('Access-Control-Allow-Credentials', 'true')
-#   return response
-
-# @app.post("/faq")
-# def faq():
-#     # text = request.get_json().get("message")
-#     # answer = chatbot_response(text)
-#     # answer.headers.add('Access-Control-Allow-Origin', '*')
-#     return jsonify({"answer":"Ha chal raha hai ab!"})
 
 if __name__ == "__main__":
     app.run(debug=True)
