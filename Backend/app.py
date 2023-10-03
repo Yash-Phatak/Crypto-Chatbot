@@ -8,8 +8,7 @@ from analysis import cryptocurrencies
 from analysis import compareit
 import difflib
 import random
-import io   
-import streamlit as st
+import io 
 app = Flask(__name__)
 api_v2_cors_config = {
   "origins": ["*"],
