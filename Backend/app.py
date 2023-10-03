@@ -2,7 +2,7 @@ from flask import jsonify,Flask,render_template,request,send_file
 import asyncio
 from flask_cors import CORS
 from chat import chatbot_response
-from api import get_realtime
+from api import get_realtime    
 from analysis import highplot
 from analysis import cryptocurrencies
 from analysis import compareit
@@ -22,13 +22,13 @@ CORS(app, resources={r'/*': api_v2_cors_config})
 def index_get():    
     return "Hello"
 
-@app.post("/faq")
-def faq():
-    text = request.get_json().get("message")
-    # print(type(text))
-    answer = chatbot_response(text)
-    # message = {"answer":response}
-    return jsonify(answer)
+# @app.post("/faq")
+# def faq():
+#     text = request.get_json().get("message")
+#     # print(type(text))
+#     answer = chatbot_response(text)
+#     # message = {"answer":response}
+#     return jsonify(answer)
 
 # @app.post("/faq")
 # async def faq():

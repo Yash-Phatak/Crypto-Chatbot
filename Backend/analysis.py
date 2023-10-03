@@ -6,7 +6,7 @@ import warnings
 import datetime
 warnings.filterwarnings('ignore')
 
-data = pd.read_csv('Backend\combined_data.csv')
+data = pd.read_csv('combined_data.csv')
 data = data.drop(['SNo'],axis=1) #Dropping SNO column
 data['Date']= data['Date'].str.split().str.get(0) #Separating the date
 data['Date'] = pd.to_datetime(data['Date']) #Converting Date String to Date timestamp
